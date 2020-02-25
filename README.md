@@ -114,7 +114,7 @@ ___
 
 
 #### NOT
----
+___
 - NOT 연산자는 True는 False로 False는 True로 바꿔줍니다.
 ```javascript
   const a = !true;
@@ -122,7 +122,7 @@ ___
 ```
 
 #### AND
----
+___
 - AND 연산자는 양쪽의 값이 둘 다 true 일때만 결과물이 true 입니다.
 ```javascript
   const a = true && true ;
@@ -132,7 +132,7 @@ ___
 ```  
 
 #### OR
----
+___
 - OR 연산자는 양쪽의 값 중 하나라도 true 라면 결과물이 true 입니다
 ```javascript
 let t = true || false
@@ -140,7 +140,7 @@ console.log(t); // true
 ```
 
 #### 연산순서
----
+___
 - 논리연산자의 순서는 MOT -> AND -> OR 입니다 
 ```javascript
 const value = !((true && false) || (true && false) || !false);
@@ -151,11 +151,11 @@ const value = !((true && false) || (true && false) || !false);
 ```
 
 ### 비교 연산자 
-비교연산자는 두 값을 비교할 때 사용
----
+___
+  - 비교연산자는 두 값을 비교할 때 사용
 
 #### 두 값이 일치하는지 확인
----
+___
 ```javascript
 const a = 1;
 const b = 1;
@@ -164,4 +164,23 @@ console.log(equals); // true
 ```
   > **`===`는 두 값이 일치하는지 확인해준다 일치하면 true 일치하지 않으면 false**<br/>
   > **`==`는 두 값이 일치하는지 확인해주지만 타입 비교 하지 않는다.**
+  > **0 과 false도 같은 값으로 간주**
+  > **undefined 와 null도 같은 값으로 간주** 
 
+#### 두 값이 일치하지 않는지 확인
+___
+  - 두 값이 일치하지 않는지 확인 할 때에는 `!==`을 사용
+  ```javascript
+    const value = 'a' !== 'b' ; 
+    console.log(value);
+    console.log(1 != '1'); // false type검사 안함
+    console.log(1 !== '1'); // true 
+  ```
+
+#### 크고작음 
+___
+  - 두 값중에서 무엇이 더 크고 작은지 비교하기 위해서 다음 연산자를 사용 할 수 있다
+  ```javascript
+  const a = 10;
+  const b = 15;
+  const c - 15
