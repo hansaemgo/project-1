@@ -80,7 +80,7 @@ let loading = false; // 거짓
 - 없음을 의미
 
 ```javascript
-const friend = null; // 친구가 없다
+const friend = null; // 친구가 없다 (null)
 let criminal;
-console.log(criminal); // 범인이 아직 정해지지 않았다
+console.log(criminal); // 범인이 아직 정해지지 않았다 (undefined)
 ```
