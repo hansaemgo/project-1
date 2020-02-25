@@ -1,4 +1,2 @@
-console.log('hello');
-let value = 1;
-console.log(value);
-// let value = 3;
+const a = 1;
+const a = 2;
