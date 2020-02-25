@@ -1,6 +1,6 @@
 ## JavaScript 입문
 
-#### 01. 변수
+### 01. 변수
 
 - 특정 이름에 특정 값을 담을 때 사용
 - 변수는, 바뀔수 있는 값을 말하며, 한번 선언하고 나서 바꿀 수 있음
@@ -21,3 +21,12 @@
   ```
 
   ![value error](/src/image/variation_error.jpg)
+
+- 문자열 선언
+
+  ```javascript
+  let text = 'Hello';
+  let name = 'Hansaem Go' = ;
+  ```
+
+### 02. 상수
