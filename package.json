@@ -1,7 +1,7 @@
 {
-  "name": "vanilla",
+  "name": "javascript-practice-0225",
   "version": "1.0.0",
-  "description": "",
+  "description": "JavaScript-practice-0225",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
