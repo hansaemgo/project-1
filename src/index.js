@@ -28,7 +28,20 @@ console.log(d);
 // const equals = a == b;
 // console.log(equals);
 
-console.log(1 != '1');
-console.log(1 !== '1');
-const value = 'a' !== 'b';
-console.log(value);
+// console.log(1 != '1');
+// console.log(1 !== '1');
+// const value = 'a' !== 'b';
+// console.log(value);
+
+const a = 10;
+const b = 15;
+const c = 15;
+
+console.log(a < b);
+console.log(b >= a);
+console.log(a <= c);
+console.log(b < c);
+
+const aa = '안녕';
+const bb = '하세요.';
+console.log(aa + bb);

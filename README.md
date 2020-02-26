@@ -183,4 +183,21 @@ ___
   ```javascript
   const a = 10;
   const b = 15;
-  const c - 15
+  const c = 15;
+
+  console.log(a < b); //true
+  console.log(b > a); //true
+  console.log(b >= a); //true
+  console.log(a <= c); //true
+  console.log(b < c); //false
+  ```
+
+#### 문자열 붙이기 
+___ 
+  - 문자열을 붙을때는 `+`로 할 수 있습니다.
+  ```javascript
+    const aa = '안녕';
+    const bb = '하세요.';
+    console.log(aa + bb); //안녕하세요
+  ```
+    
