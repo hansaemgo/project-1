@@ -332,3 +332,70 @@ if (a === 5) {
       console.log('잘 모르겠네요');
   }
   ```
+
+## 04. 함수
+
+---
+
+- 특정 코드를 하나의 명령으로 실행 할 수 있게 해주는 기능
+  ```javascript
+  function add(a, b) {
+    // a와B는 파라미터(매게변수) : 어떤값을 받아올지 정해준다
+    return a + b;
+    console.log('호출이 되지 않는 코드!'); // return 다음 코드는 실행이 되지 않는다.
+  }
+  const sum = add(2, 6);
+  console.log(sum); //8
+  ```
+- 템플릿 리터럴 사용해보기
+
+  ```javascript
+  function hello(name) {
+    console.log(`hello ${name}! `);
+  }
+  hello('hansaemgo');
+  ```
+
+- 점수를 성적등급으로 변환하기 (점수를 A, B, C, D, F 등급으로 반환하는 함수만들기)
+  ```javascript
+  function getGrade(score) {
+    if (score === 100) {
+      return 'A+';
+    } else if (score >= 90) {
+      return 'A';
+    } else if (score === 89) {
+      return 'B+';
+    } else if (score >= 80) {
+      return 'B';
+    } else if (score === 79) {
+      return 'c+';
+    } else if (score >= 70) {
+      return 'C';
+    } else if (score === 69) {
+      return 'D+';
+    } else if (score >= 60) {
+      return 'D';
+    } else {
+      return 'F';
+    }
+  }
+  const grade = getGrade(95);
+  console.log(grade); // A
+  ```
+- 화살표 함수 ( 함수를 선언하는 방식 중 또 다른 방식)
+  ```javascript
+  const add = (a, b) => {
+    return a + b;
+  };
+  const sum = add(1, 3);
+  console.log(sum);
+  ```
+- 화살표 함수 좀더 간결하게 표기하기
+
+  ```javascript
+  const add = (a, b) => a + b; // 코드 블록 없이 바로 리턴 값 넣기
+  const sum = add(1, 4);
+  console.log(sum);
+  ```
+
+## 05. 객체
