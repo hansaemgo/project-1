@@ -592,7 +592,6 @@ if (a === 5) {
   ```
   - 이름을 가져올수만 있고 설정 할수 없음. `console.log(person.fullName());`으로 호출히야함
   - 수정 (get, set)
-  -
   ```javascript
   const person = {
     firstName: 'Go',
@@ -610,3 +609,46 @@ if (a === 5) {
   person.fullName = 'kim jihyun';
   console.log(person.fullName);
   ```
+
+## 06. 배열
+
+- 여러개의 항목이 들어있는 리스트와 같다
+- 배열을 선언할때 `[]`대괄호 안에 나열해준다.
+  ```javascript
+  const array = [1, 2, 3, 4, 5];
+  console.log(array[0]); // 1
+  ```
+- 객체 형태의 배열도 선언이 가능하다.
+
+  ```javascript
+  const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+  console.log(objects[1]); //  {name : '야옹이'}
+  ```
+
+  ### 배열의 [n]번째 항목 조회
+
+  - 배열 선언후 n번째 항목 조회 하고 싶을 때,
+
+    ```javascript
+    console.log(array[n]); // n번째 항목
+    ```
+
+  ### 배열에 새 항목 추가 하기
+
+  - 기존배열의 이름 `push`({ 추가할 항목 })
+
+    ```javascript
+    const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+    objects.push({ name: '보오링' });
+    console.log(objects[2]); // { name : '보오링'}
+    ```
+
+  ### 배열의 크기 알아내기
+
+  - 배열의 크기를 알아낼때 `length`값을 확인
+    ```javascript
+    const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+    console.log(objects.length); // 2
+    objects.push({ name: '보오링' });
+    console.log(objects.length); // 3
+    ```

@@ -144,3 +144,30 @@
 // console.log(person.fullName);
 // person.fullName = 'kim jihyun';
 // console.log(person.fullName);
+// const array = [1, 2, 3, 4, 5];
+// console.log(array);
+// const array2 = [1, 'blabla', {}];
+// console.log(array2[2]);
+
+// const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+// objects.push({
+//   name: '보오리'
+// });
+
+// console.log(objects[2]);
+
+// const array = [1, 2, 3, 4];
+// array.push(5);
+// console.log(array);
+
+// objects.push({
+//   name: '이히히리'
+// });
+
+// console.log(objects);
+
+const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+console.log(objects.length);
+objects.push({ name: '보오링' });
+console.log(objects[2]); // { name : '보오링'}
+console.log(objects.length);
