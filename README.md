@@ -444,3 +444,169 @@ if (a === 5) {
 
   print(ironMan); // 아이언맨(토니스타크) 역할을 맡은 배우는 로버트 다우니 주니어 입니다.
   ```
+
+### 객체 비구조화 할당
+
+---
+
+- 상단 print 함수에서 hero내부 값을 조회할때마다 `hero.`를 중복 입력, 객체 비구조화 할당을 통해 짧게 작성
+- 객체 비구조화 할당 `or` 객체 구조분해 (객체에서 특정 값을 추출)
+
+  1. 객체에서 값들을 추출하여 새로운 상수로 선언 해주는 방법
+
+  ```javascript
+  function print(hero) {
+    const { alias, name, actor } = hero;
+    const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
+    console.log(text);
+  }
+  print(ironMan); // 아이언맨(토니스타크) 역할을 맡은 배우는 로버트 다우니 주니어 입니다.
+  ```
+
+  2. 파라미터 단계에서 객체 비구조화 할당
+
+  ```javascript
+  function print({ alias, name, actor }) {
+    const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
+    console.log(text);
+  }
+  print(ironMan); // 아이언맨(토니스타크) 역할을 맡은 배우는 로버트 다우니 주니어 입니다.
+  ```
+
+  ```javascript
+  const { name } = ironman;
+  console.log(name); // 토니스타크
+  ```
+
+### 객체 안에 함수 넣기
+
+---
+
+- `function` 키워드로 만들었을때의 `this`는 자기가 속해있는 부분을 가르킴
+  ```javascript
+  const dog = {
+    name: '멍멍이!',
+    sound: '멍멍!',
+    say: function say() {
+      console.log(this.sound); // 여기서 가르키는 `this`는 함수가 위치한 객체 자기자신 dog를 가르킨다
+    }
+  };
+  dog.say(); // (dog.sound) // 멍멍!!
+  ```
+- 화살표 함수 내부에서는 `this`가 뭔지 모른다
+  ```javascript
+  const cat = {
+    name: '야옹이',
+    sound: '야~옹',
+    say: () => console.log(this.sound)
+  };
+  cat.say(); // undefined
+  ```
+- 익명함수는 가능
+  ```javascript
+  const cat = {
+    name: '야옹이',
+    sound: '야~옹',
+    say: function() {
+      console.log(this.sound);
+    }
+  };
+  cat.say(); // 야~옹
+  ```
+
+### Getter 함수와 Setter함수
+
+---
+
+- Getter 함수 (속성의 값을 얻어오는 메소드)
+  1. Getter함수 앞에 `get`을 붙인다. 또한 return으로 값을 반환해 주어야 한다.
+  2. 특정값을 조회하려고 할때(호출X), 특정 연산된 값을 받아서 사용하는 것을 의미.
+  ```javascript
+  const numbers = {
+    a: 1,
+    b: 2,
+    get sum() {
+      console.log('sum함수가 실행됩니다.');
+      return numbers.a + numbers.b;
+    }
+  };
+  console.log(numbers.sum);
+  numbers.b = 6;
+  console.log(numbers.sum);
+  ```
+- Setter 함수 (속성의 값을 설정하는 메소드)
+  1. 특정 값을 바꾸려고 할때 사용한다.
+  2. Setter 함수 앞에 `set`을 붙인다.
+  ```javascript
+  const dog = {
+    _name: '멍멍이', // setter함수와 이름 헷갈리지 않도록 언더바 붙여줌
+    set name(value) {
+      console.log(`이름이 바뀝니다..... ${value}`);
+      this._name = value;
+    }
+  };
+  console.log(dog._name); // 멍멍이
+  dog.name = '보리';
+  console.log(dog._name); // 이름이 바뀝니다....보리  // 보리
+  ```
+- 예제 만들기 (Getter 함수와 Setter 함수 사용해서 calculate)
+  ```javascript
+  const numbers = {
+    _a: 1,
+    _b: 2,
+    sum: 3,
+    calculate() {
+      console.log('calculate');
+      this.sum = this._a + this._b;
+    },
+    get a() {
+      return this._a;
+    },
+    get b() {
+      return this._b;
+    },
+    set a(value) {
+      this._a = value;
+      this.calculate();
+    },
+    set b(value) {
+      this._b = value;
+      this.calculate();
+    }
+  };
+  console.log(numbers.sum);
+  numbers.a = 7;
+  numbers.b = 9;
+  console.log(numbers.sum);
+  ```
+- Getter and Setter 예제2
+  ```javascript
+  const person = {
+    firstName: 'Go',
+    lastName: 'hansaem',
+    fullName() {
+      return `${person.firstName} ${person.lastName}`;
+    }
+  };
+  console.log(person.fullName());
+  ```
+  - 이름을 가져올수만 있고 설정 할수 없음. `console.log(person.fullName());`으로 호출히야함
+  - 수정 (get, set)
+  -
+  ```javascript
+  const person = {
+    firstName: 'Go',
+    lastName: 'hansaem',
+    get fullName() {
+      return `${person.firstName} ${person.lastName}`;
+    },
+    set fullName(value) {
+      const parts = value.split(' ');
+      this.firstName = parts[0];
+      this.lastName = parts[1];
+    }
+  };
+  console.log(person.fullName);
+  person.fullName = 'kim jihyun';
+  console.log(person.fullName);
+  ```
