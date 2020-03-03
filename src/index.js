@@ -1,57 +1,40 @@
-// function getGrade(score) {
-//   if (score === 100) {
-//     return 'A+';
-//   } else if (score >= 90) {
-//     return 'A';
-//   } else if (score === 89) {
-//     return 'B+';
-//   } else if (score >= 80) {
-//     return 'B';
-//   } else if (score === 79) {
-//     return 'c+';
-//   } else if (score >= 70) {
-//     return 'C';
-//   } else if (score === 69) {
-//     return 'D+';
-//   } else if (score >= 60) {
-//     return 'D';
-//   } else {
-//     return 'F';
-//   }
-// }
-// const grade = getGrade(95);
-// console.log(grade);
+// const dogName = '멍멍이';
+// const dogAge = 2;
 
-// const add = (a, b) => {
-//   return a + b;
-// };
+// console.log(dogName);
+// console.log(dogAge);
 
-const sum = add(1, 2);
-console.log(sum);
-
-const hello = name => {
-  console.log(`Hello, ${name}! `);
-};
-hello('hansaem');
-
-const add = (a, b) => a + b;
-const sum = add(1, 3);
-console.log(sum);
-const add = (a, b) => {
-  return a + b;
-};
-const sum = add(1, 3);
-console.log(sum);
-
-const add = (a, b) => a + b; // 코드 블록 없이 바로 리턴 값 넣기
-const sum = add(1, 4);
-console.log(sum);
-
-const getGrade = score => {
-  if (score === 100) {
-    return 'A+';
+const dog = {
+  Name: '멍멍이',
+  Age: 2,
+  cute: true,
+  sample: {
+    a: 1,
+    b: 2
   }
 };
 
-const grade = getGrade(100);
-console.log(grade);
+console.log(dog.Name);
+
+const ironMan = {
+  name: '토니 스타크',
+  actor: '로버트 다우니 주니어',
+  alias: '아이언맨'
+};
+
+const captainAmerica = {
+  name: '스티븐 로저스',
+  actor: '크리스 에반스',
+  alias: '캡틴 아메리카'
+};
+
+console.log(ironMan);
+console.log(captainAmerica);
+
+function print(hero) {
+  const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${hero.actor} 입니다.`;
+  console.log(text);
+}
+
+print(ironMan);
+print(captainAmerica);

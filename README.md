@@ -399,3 +399,48 @@ if (a === 5) {
   ```
 
 ## 05. 객체
+
+- 어떤 값을 선언할때 하나의 이름에 여러종류의 값을 넣을 수 있게 해준다.
+- 기존에 변수나 상수를 선언하는 식으로 값을 주면
+  ```javascript
+  const dogName = '멍멍이';
+  console.log(dogName); //멍멍이
+  const dogAge = 2;
+  console.log(dogAge); // 2
+  ```
+- 객체 사용시 중괄호 사용하여 원하는 값 넣어줄 수 있음
+  const 객체 이름 {
+  키(키 값은 공백이 없어야 하며, 공백이있어야 하는 상황이면 따옴표로 감싸서 문자열로) : 원하는 값,
+  }
+
+  ```javascript
+  const dog = {
+    Name: '멍멍이',
+    Age: 2,
+    cute: true,
+    sample: {
+      a: 1,
+      b: 2
+    }
+  };
+  console.log(dog); // object{Name:'멍멍이', Age: 2, cute : true, sample:{a: 1, b: 2}}
+  console.log(dog.Name); // 멍멍이
+  ```
+
+  - 함수의 파라미터에서도 객체를 받아와서 사용 가능하다
+
+  ```javascript
+  const ironMan = {
+    name: '토니 스타크',
+    actor: '로버트 다우니 주니어',
+    alias: '아이언맨'
+  };
+  console.log(ironMan); //object{name:'토니 스타크', actor: '로버트 다우니 주니어', alias: 아이언맨' }
+
+  function print(hero) {
+    const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${hero.actor} 입니다.`;
+    console.log(text);
+  }
+
+  print(ironMan); // 아이언맨(토니스타크) 역할을 맡은 배우는 로버트 다우니 주니어 입니다.
+  ```
