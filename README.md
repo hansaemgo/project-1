@@ -652,3 +652,74 @@ if (a === 5) {
     objects.push({ name: '보오링' });
     console.log(objects.length); // 3
     ```
+
+## 07. 반복문
+
+---
+
+- 반복문은 특정 작업을 반복적으로 할 때 사용할 수 있는 구문
+
+  ### 1.for
+
+  ```javascript
+  for (초기구문; 조건구문; 변화구문) {
+    코드;
+  }
+  ```
+
+  - 가장 기본적인 반복문, 특정 값에 변화를 주면서 조건이 만족된다면 계속 반복
+  - `i++` 또는 `i--`등 증감 형태로 변화구문을 사용한다
+
+  ```javascript
+  for (let i = 0; i < 5; i++) {
+    console.log(i); // 0 1 2 3 4
+  }
+  ```
+
+  ### 1-1.배열과 for
+
+  - 배열이름`.length`는 배열 안의 원소의 갯수를 셀 수 있다.
+  - `console.log(name[i]);` 배열의 원소를 하나하나 나열하게 해준다.
+
+  ```javascript
+  const names = ['보리', '은비', '까비'];
+  for (let i = 0; i < names.length; i++) {
+    console.log(names[i]); // 보리 은비 까비
+  }
+  ```
+
+  ### 2.while
+
+  - 특정 조건이 참이라면 계속해서 반복하는 반복문 (주로 숫자비교가 아닌 참/거짓을 구분하는 조건문에 사용)
+  - `for`문과 다르게 `let i = 0`과같은 초기구문이 `while`문 밖에 위치한다
+  - 중요한 점은 조건이 언젠가는 `false`가 되도록 만들어줘야 한다 `true`인경우 무한루프
+  - 위의 `for`문 `while`문으로 고치기
+
+  ```javascript
+  let i = 0;
+  while (i < 5) {
+    console.log(i); // 0 1 2 3 4
+  }
+  ```
+
+  ***
+
+  ```javascript
+  let i = 0;
+  let isFun = false;
+  while  { // (isFun === false)
+    // isFun이 false일때 반복해라
+    console.log(i);
+    i++;
+    if (i === 5) {
+      isFun = true;
+    }
+  }
+  ```
+
+  ### 3.for... of
+
+  - 배열에 관한 반복문을 돌리기 위해서 만들어진 반복문
+
+  ```javascript
+  ```

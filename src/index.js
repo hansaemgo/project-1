@@ -166,8 +166,40 @@
 
 // console.log(objects);
 
-const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
-console.log(objects.length);
-objects.push({ name: '보오링' });
-console.log(objects[2]); // { name : '보오링'}
-console.log(objects.length);
+// const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+// console.log(objects.length);
+// objects.push({ name: '보오링' });
+// console.log(objects[2]); // { name : '보오링'}
+// console.log(objects.length);
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// const names = ['보리', '은비', '까비'];
+
+// for (let i = 0; i < names.length; i++) {
+//   console.log(names[i]);
+// }
+
+// let i = 0;
+// while (i < 5) {
+//   console.log(i);
+//   i++;
+// }
+
+// let i = 0;
+// let isFun = false;
+// while (isFun === false) {
+
+//   console.log(i);
+//   i++;
+//   if (i === 5) {
+//     isFun = true;
+//   }
+// }
+
+const numbers = [10, 20, 30, 40, 50];
+for (let number of numbers) {
+  console.log(number);
+}
