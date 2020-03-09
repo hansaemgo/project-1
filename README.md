@@ -776,3 +776,19 @@ if (a === 5) {
   const result = sumNum([1, 2, 3, 4, 5]);
   console.log(result);
   ```
+
+  - 3보다 큰 numbers 배열 리턴하기
+
+  ```javascript
+  function biggerThanThree(numbers) {
+    const array = [];
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 3) {
+        array.push(numbers[i]);
+      }
+    }
+    return array;
+  }
+  const numbers = [1, 2, 3, 4, 5, 6, 7];
+  console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
+  ```

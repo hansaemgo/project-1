@@ -222,14 +222,40 @@
 //  const result = sumOf([1, 2, 3, 4, 5]);
 //  console.log(result);
 
-function sumNum(numbers) {
-  let sum = 0;
+// function sumNum(numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     console.log(numbers[i]);
+//     sum += numbers[i];
+//   }
+//   return sum;
+// }
+
+// const result = sumNum([1, 2, 3, 4, 5]);
+// console.log(result);
+
+// function biggerThanThree(numbers) {
+//   const array = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 3) {
+//       array.push(numbers[i]);
+//     }
+//     return array;
+//   }
+// }
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7];
+// console.log(biggerThanThree(numbers));
+
+function biggerThanThree(numbers) {
+  const array = [];
   for (let i = 0; i < numbers.length; i++) {
-    console.log(numbers[i]);
-    sum += numbers[i];
+    if (numbers[i] > 3) {
+      array.push(numbers[i]);
+    }
   }
-  return sum;
+  return array;
 }
 
-const result = sumNum([1, 2, 3, 4, 5]);
-console.log(result);
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
