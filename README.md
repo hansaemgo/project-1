@@ -792,3 +792,219 @@ if (a === 5) {
   const numbers = [1, 2, 3, 4, 5, 6, 7];
   console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
   ```
+
+## 08. 배열 내장함수
+
+---
+
+### 1.forEach
+
+- `forEach`는 각 원소에 대하여 처리하고 싶은 코드를 함수로 넣어 사용하는 배열 내장함수
+- 기존에 배운 `for`문을 대체 할 수 있다.
+
+  ```javascript
+  const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+  superheroes.forEach(hero => {
+    console.log(hero);
+  });
+  ```
+
+### 2.map
+
+- `map`은 배열 안의 각 원소를 변환 할 때 사용 (새로운 배열 만들어짐)
+  ```javascript
+  const array = [1, 2, 3, 4, 5, 6, 7, 8];
+  const square = n => n * n;
+  const squared = array.map(square);
+  console.log(squared);
+  ```
+- 변화함수에 이름을 붙일 필요없이 짧게 사용가능
+  ```javascript
+  const array = [1, 2, 3, 4, 5, 6, 7, 8];
+  const squared = array.map(n => n * n);
+  console.log(squared); // [1, 4, 9, 16, 25, 36, 49, 64]
+  ```
+
+### 3.indexOf
+
+- `indexOf`는 원하는 항목이 몇번째 원소인지 찾아주는 함수
+
+  ```javascript
+  const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+  const index = superheroes.indexOf('토르');
+  console.log(index); // 2
+  ```
+
+### 4.findIndex
+
+- 배열 안의 값의 객체이거나 배열일때 찾아내고자 하는 항목이 몇번째인지 알아내기 위한 내장함수
+
+  ```javascript
+  const todos = [
+    {
+      id: 1,
+      text: '자바스크립트 입문',
+      done: true
+    },
+    {
+      id: 2,
+      text: '함수 배우기',
+      done: true
+    },
+    {
+      id: 3,
+      text: '객체와 배열 배우기',
+      done: true
+    },
+    {
+      id: 4,
+      text: '배열 내장함수 배우기',
+      done: false
+    }
+  ];
+
+  const index = todos.findIndex(todo => todo.id === 2);
+  console.log(index); // 1
+  ```
+
+### 5.find
+
+- `find`는 몇번째인지가 아니라 찾아낸 값 자체를 반환
+  ```javascript
+  const todos = [
+    {
+      id: 1,
+      text: '자바스크립트 입문',
+      done: true
+    },
+    {
+      id: 2,
+      text: '함수 배우기',
+      done: true
+    },
+    {
+      id: 3,
+      text: '객체와 배열 배우기',
+      done: true
+    },
+    {
+      id: 4,
+      text: '배열 내장함수 배우기',
+      done: false
+    }
+  ];
+  const todo = todos.find(todo => todo.id === 3);
+  console.log(todo); // {id: 3, text: "객체와 배열 배우기", done: true}
+  ```
+
+### 6.filter
+
+- `filter`는 배열에서 특정 조건을 만족하는 값들만 따로 추출하여 새로운 배열을 만든다.
+
+  ```javascript
+  const todos = [
+    {
+      id: 1,
+      text: '자바스크립트 입문',
+      done: true
+    },
+    {
+      id: 2,
+      text: '함수 배우기',
+      done: true
+    },
+    {
+      id: 3,
+      text: '객체와 배열 배우기',
+      done: true
+    },
+    {
+      id: 4,
+      text: '배열 내장함수 배우기',
+      done: false
+    }
+  ];
+
+  const taskNotDone = todos.filter(todo => todo.done === false);
+  console.log(taskNotDone);
+  ```
+
+  ```javascript
+  const taskNotDone = todos.filter(todo => todo.done === false);
+  위의 코드와
+  const taskNotDone = todos.filter(todo => !todo.done) // false 와 같음
+  const taskNotDone = todos.filter(todo => todo.done) // true 와 같음
+  ```
+
+### 7.splice
+
+- `splice`는 배열에서 특정항목을 제거할때 사용 (기존배열에서 삭제됨)
+
+  ```javascript
+  const number = [10, 20, 30, 40];
+  const index = number.indexOf(30);
+  number.splice(index, 1);
+  console.log(number); // [10, 20, 40];
+  ```
+
+### 8.slice
+
+- `slice`는 `splice`와 비슷하지만 기존 배열 건드리지 않음
+
+  ```javascript
+  const number = [10, 20, 30, 40];
+  const sliced = number.slice(0, 2);
+  console.log(sliced); // [10, 20]
+  console.log(number); // [10, 20, 30, 40]
+  ```
+
+### 9.shift & pop
+
+- `shift`는 배열에서 첫번째 (왼쪽부터)원소 추출 (해당 원소 삭제됨)
+
+  ```javascript
+  const number = [1, 2, 3, 4, 5];
+  number.shift();
+  number.shift();
+  console.log(number); // [3, 4, 5]
+  ```
+
+- `pop`은 배열에서 맨 마지막부터(오른쪽부터 ) 추출 (해당 원소 삭제됨)
+
+  ```javascript
+  const number = [1, 2, 3, 4, 5];
+  number.pop();
+  console.log(number); // [1, 2, 3, 4]
+  ```
+
+### 10. unshift
+
+- 배열의 맨앞에 원소를 추가
+- ( unshift & shift 맨앞 원소 변형 )
+  ```javascript
+  const number = [10, 20, 30, 40, 50];
+  number.unshift(5);
+  console.log(number);
+  ```
+
+### 11. concat
+
+- 여러개의 배열을 하나의 배열로 합쳐줌
+
+  ```javascript
+  const arr1 = [1, 2, 3];
+  const arr2 = [4, 5, 6];
+
+  const concated = arr1.concat(arr2);
+  console.log(concated);
+  ```
+
+### 12.join
+
+- `join`은 문자열 형태로 배열을 합쳐준다
+
+```javascript
+const array = [1, 2, 3, 4, 5];
+console.log(array.join()); /// 1,2,3,4,5
+console.log(array.join('/')); // 1/2/3/4/5
+```

@@ -247,15 +247,119 @@
 // const numbers = [1, 2, 3, 4, 5, 6, 7];
 // console.log(biggerThanThree(numbers));
 
-function biggerThanThree(numbers) {
-  const array = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > 3) {
-      array.push(numbers[i]);
-    }
-  }
-  return array;
-}
+// function biggerThanThree(numbers) {
+//   const array = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 3) {
+//       array.push(numbers[i]);
+//     }
+//   }
+//   return array;
+// }
 
-const numbers = [1, 2, 3, 4, 5, 6, 7];
-console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
+// const numbers = [1, 2, 3, 4, 5, 6, 7];
+// console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
+
+// const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+
+// function print(hero) {
+//   console.log(hero);
+// }
+
+// superheroes.forEach(function(hero) {
+//   console.log(hero);
+// });
+
+// superheroes.forEach(hero => {
+//   console.log(hero);
+// });
+
+// array.forEach(n = n*n) => {
+//     array.push([n]);
+// }
+
+// const array = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const squared = [];
+// array.forEach(n => {
+//   squared.push(n * n);
+// });
+
+// console.log(squared);
+
+// const squeard = [];
+// array.forEach(n => {
+//   squeard.push(n * n);
+// });
+
+// console.log(squeard);
+
+// const squared = array.map(n => n * n);
+// console.log(squared);
+
+// const square = n => n * n;
+// const squared = array.map(square);
+// console.log(squared);
+
+// const squared = array.map(n => n * n);
+// console.log(squared);
+
+// const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+
+// const index = superheroes.indexOf('토르');
+// console.log(index); // 2
+
+// const todos = [
+//   {
+//     id: 1,
+//     text: '자바스크립트 입문',
+//     done: true
+//   },
+//   {
+//     id: 2,
+//     text: '함수 배우기',
+//     done: true
+//   },
+//   {
+//     id: 3,
+//     text: '객체와 배열 배우기',
+//     done: true
+//   },
+//   {
+//     id: 4,
+//     text: '배열 내장함수 배우기',
+//     done: false
+//   }
+// ];
+
+// const todo = todos.find(todo => todo.id === 3);
+// console.log(todo);
+
+// const taskNotDone = todos.filter(todo => todo.done === false);
+// console.log(taskNotDone);
+
+// const number = [10, 20, 30, 40];
+// const index = number.indexOf(30);
+// // const numbers = number.splice(index, 1);
+// console.log(number);
+// // console.log(numbers);
+
+// const number = [10, 20, 30, 40];
+// const sliced = number.slice(0, 2);
+
+// console.log(sliced); // [10, 20]
+// console.log(number); // [10, 20, 30, 40]
+
+// const number = [10, 20, 30, 40, 50];
+// number.unshift(5);
+// console.log(number);
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+
+// const concated = arr1.concat(arr2);
+// console.log(concated);
+
+// const array = [1, 2, 3, 4, 5];
+// console.log(array.join());
+// console.log(array.join('/'));
