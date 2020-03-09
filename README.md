@@ -1008,3 +1008,11 @@ const array = [1, 2, 3, 4, 5];
 console.log(array.join()); /// 1,2,3,4,5
 console.log(array.join('/')); // 1/2/3/4/5
 ```
+
+### 14.reduce
+
+- `reduce` 네가지 인자
+  - 누산기(accumulator)
+  - 현재 값 (current)
+  - 현재 인덱스(index)
+  - 원본배열(src)
