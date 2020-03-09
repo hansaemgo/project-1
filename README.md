@@ -722,4 +722,57 @@ if (a === 5) {
   - 배열에 관한 반복문을 돌리기 위해서 만들어진 반복문
 
   ```javascript
+  const numbers = [10, 20, 30, 40, 50];
+  for (let number of numbers) {
+    console.log(number);
+  }
+  ```
+
+  ### 4.for...in
+
+  - 객체에 대한 반복적인 작업에 사용
+  - 객체의 정보를 배열 형태로 받아 올 수 있는 함수
+    ```javascript
+    const doggy = {
+      name: '멍멍이',
+      sound: '멍멍',
+      age: 2
+    };
+    console.log(Object.entries(doggy)); // [[키, 값], [키, 값]] 형태의 배열로 변환
+    console.log(Object.keys(doggy)); // name, sound , age [ 키, 키, 키] 형태의 배열
+    console.log(Object.values(doggy)); // '멍멍이', '멍멍' [값, 값, 값] 형태의 배열
+    ```
+    ```javascript
+    for (let key in doggy) {
+      console.log(`${key} : ${doggy[key]}`); // 키 : 값 형태로 출력
+    }
+    ```
+
+  ### 5.continue & break
+
+  - `continue` 다음루프를 돌게한다 `break`는 반복문을 벗어나게 한다.
+
+  ```javascript
+  for (let i = 0; i < 10; i++) {
+    if (i === 2) continue; // 다음루프 실항하게 한다 (2 건너뛰기)
+    console.log(i); // 반복문 끝내기
+    if (i === 5) break;
+  }
+  ```
+
+  ### 6. 퀴즈
+
+  - numbers 를 파라미터로 받아와서 총합을 구하는 함수 만들기
+
+  ```javascript
+  function sumNum(numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      console.log(numbers[i]);
+      sum += numbers[i];
+    }
+    return sum;
+  }
+  const result = sumNum([1, 2, 3, 4, 5]);
+  console.log(result);
   ```

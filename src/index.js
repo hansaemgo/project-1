@@ -199,7 +199,37 @@
 //   }
 // }
 
-const numbers = [10, 20, 30, 40, 50];
-for (let number of numbers) {
-  console.log(number);
+// const numbers = [10, 20, 30, 40, 50];
+// for (let number of numbers) {
+//   console.log(number);
+// }
+
+// const doggy = {
+//   name: '멍멍이',
+//   sound: '멍멍',
+//   age: 2
+// };
+// // console.log(Object.entries(doggy));
+// // console.log(Object.keys(doggy));
+// // console.log(Object.values(doggy));
+
+// for (let key in doggy) {
+//   console.log(`${key} : ${doggy[key]}`);
+// // }
+
+// function sumOf(numbers) {
+
+//  const result = sumOf([1, 2, 3, 4, 5]);
+//  console.log(result);
+
+function sumNum(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+    sum += numbers[i];
+  }
+  return sum;
 }
+
+const result = sumNum([1, 2, 3, 4, 5]);
+console.log(result);
