@@ -363,3 +363,60 @@
 // const array = [1, 2, 3, 4, 5];
 // console.log(array.join());
 // console.log(array.join('/'));
+
+// const numbers = [1, 2, 3, 4, 5];
+// let sum = 0;
+// numbers.forEach(n => {
+//   sum = sum + n;
+// });
+
+// console.log(sum);
+
+// const numbers = [1, 2, 3, 4, 5];
+// let sum = numbers.reduce((acc, current, index, array) => {
+//   if (index === array.length - 1) {
+//     return (acc + current) / array.length;
+//   }
+//   return acc + current;
+// }, 0);
+// console.log(sum);
+
+// const numbers = [1, 2, 3, 4, 5];
+// // let sum = numbers.reduce((acc, current) => acc + current, 0);
+
+// // console.log(sum);
+// let avg = numbers.reduce((acc, current, index, array) => {
+//   if (index === array.length - 1) {
+//     return (acc + current) / array.length;
+//   }
+//   return acc + current;
+// });
+// console.log(avg);
+
+// const alphabets = ['a', 'a', 'a', 'b', 'c', 'c', 'd', 'e'];
+
+// const counts = alphabets.reduce((acc, current) => {
+//   if (acc[current]) {
+//     acc[current] += 1;
+//   } else {
+//     acc[current] = 1;
+//   }
+//   return acc;
+// }, {});
+
+// console.log(counts);
+
+function countBiggerThanTen(numbers) {
+  //   let count = 0;
+  //   numbers.forEach(n => {
+  //     if (n > 10) {
+  //       count++;
+  //     }
+  //   });
+  //   return count;
+
+  return numbers.filter(n => n > 10).length;
+}
+
+const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
+console.log(count); // 5

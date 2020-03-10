@@ -1012,7 +1012,46 @@ console.log(array.join('/')); // 1/2/3/4/5
 ### 14.reduce
 
 - `reduce` 네가지 인자
+
   - 누산기(accumulator)
   - 현재 값 (current)
   - 현재 인덱스(index)
   - 원본배열(src)
+  - 주어진 배열의 합 구하기
+
+  ```javascript
+  const numbers = [1, 2, 3, 4, 5];
+  let sum = numbers.reduce((acc, current) => acc + current, 0);
+  //  합계                  accumulator(누계)  0은 초기값
+  console.log(sum);
+  ```
+
+  - 주어진 배열의 평균 구하기
+
+  ```javascript
+  const numbers = [1, 2, 3, 4, 5];
+  let avg = numbers.reduce((acc, current, index, array) => {
+    if (index === array.length - 1) {
+      // index : 처리하고 있는 항목의 순서
+      return (acc + current) / array.length;
+    }
+    return acc + current;
+  });
+  console.log(avg);
+  ```
+
+- `reduce`의 다른 예
+
+  ```javascript
+  const alphabets = ['a', 'a', 'a', 'b', 'c', 'c', 'd', 'e'];
+
+  const counts = alphabets.reduce((acc, current) => {
+    if (acc[current]) {
+      acc[current] += 1;
+    } else {
+      acc[current] = 1;
+    }
+    return acc;
+  }, {});
+  console.log(counts); // {a: 3, b: 1, c: 2, d: 1, e: 1}
+  ```
