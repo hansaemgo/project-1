@@ -421,8 +421,27 @@
 // const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
 // console.log(count); // 5
 
+// function Animal(type, name, sound) {
+//   // 객체생성자
+//   this.type = type;
+//   this.name = name;
+//   this.sound = sound;
+// }
+
+// Animal.prototype.say = function() {
+//   console.log(this.sound);
+// };
+// Animal.prototype.sharedValue = 1;
+
+// const dog = new Animal('개', '보리', '월월'); // 새로운 객체 만들기
+// const cat = new Animal('고양이', '굴비', '야옹'); // 객체 생성자를 사용하는 방법
+
+// dog.say();
+// cat.say();
+// console.log(dog.sharedValue);
+// console.log(cat.sharedValue);
+
 function Animal(type, name, sound) {
-  // 객체생성자
   this.type = type;
   this.name = name;
   this.sound = sound;
@@ -431,12 +450,19 @@ function Animal(type, name, sound) {
 Animal.prototype.say = function() {
   console.log(this.sound);
 };
-Animal.prototype.sharedValue = 1;
 
-const dog = new Animal('개', '보리', '월월'); // 새로운 객체 만들기
-const cat = new Animal('고양이', '굴비', '야옹'); // 객체 생성자를 사용하는 방법
+function Dog(name, sound) {
+  Animal.call(this, '개', name, sound);
+}
+
+function Cat(name, sound) {
+  Animal.call(this, '고양이', name, sound);
+}
+Dog.prototype = Animal.prototype;
+
+Cat.prototype = Animal.prototype;
+const dog = new Dog('멍멍이', '멍멍');
+const cat = new Cat('야옹이', '야옹');
 
 dog.say();
 cat.say();
-console.log(dog.sharedValue);
-console.log(cat.sharedValue);

@@ -1094,3 +1094,23 @@ function Animal(type, name, sound) {
   ```
 
 ### 객체 생성자 상속받기
+
+- ex) cat Dog라는 새로운 객체 생성자를 만든다고 가정 Animal의 기능을 최대한 재사용 하기 위한 방법
+- `Animall.call`을 호출 할때 할때 첫번째 인자에는 `this` 이후에는 필요로 하는 파라미터 넣어줘야한다
+- `prototype`을 공유하기 위해 상속받은 생성자 함수를 만들고 나서 `Animal.prototype`으로 설정
+
+  ```javascript
+  function Dog(name, sound) {
+    Animal.call(this, '개', name, sound);
+  }
+  function Cat(name, sound) {
+    Animal.call(this, '고양이', name, sound);
+  }
+  Dog.prototype = Animal.prototype;
+  Cat.prototype = Animal.prototype;
+
+  const dog = new Dog('멍멍이', '멍멍');
+  const cat = new Cat('야옹이', '야옹');
+  ```
+
+### 클래스
