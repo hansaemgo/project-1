@@ -406,17 +406,37 @@
 
 // console.log(counts);
 
-function countBiggerThanTen(numbers) {
-  //   let count = 0;
-  //   numbers.forEach(n => {
-  //     if (n > 10) {
-  //       count++;
-  //     }
-  //   });
-  //   return count;
+// function countBiggerThanTen(numbers) {
+//   //   let count = 0;
+//   //   numbers.forEach(n => {
+//   //     if (n > 10) {
+//   //       count++;
+//   //     }
+//   //   });
+//   //   return count;
 
-  return numbers.filter(n => n > 10).length;
+//   return numbers.filter(n => n > 10).length;
+// }
+
+// const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
+// console.log(count); // 5
+
+function Animal(type, name, sound) {
+  // 객체생성자
+  this.type = type;
+  this.name = name;
+  this.sound = sound;
 }
 
-const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
-console.log(count); // 5
+Animal.prototype.say = function() {
+  console.log(this.sound);
+};
+Animal.prototype.sharedValue = 1;
+
+const dog = new Animal('개', '보리', '월월'); // 새로운 객체 만들기
+const cat = new Animal('고양이', '굴비', '야옹'); // 객체 생성자를 사용하는 방법
+
+dog.say();
+cat.say();
+console.log(dog.sharedValue);
+console.log(cat.sharedValue);

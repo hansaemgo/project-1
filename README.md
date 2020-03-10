@@ -1055,3 +1055,42 @@ console.log(array.join('/')); // 1/2/3/4/5
   }, {});
   console.log(counts); // {a: 3, b: 1, c: 2, d: 1, e: 1}
   ```
+
+## 09. 프로토타입과 클래스
+
+### 객체생성자
+
+- 함수를 통해서 새로운 객체를 만들고 `function Animal...` 그 안에 넣고 싶은 값을 구현
+- 객체생성자의 함수 이름은 보통 대문자로 시작 새로운 객체를 만들 시 `new`키워드
+
+```javascript
+function Animal(type, name, sound) {
+  // 객체생성자
+  this.type = type;
+  this.name = name;
+  this.sound = sound;
+}
+```
+
+### 프로토타입
+
+- 특정 함수 또는 값을 재사용 할 수 있도록 해준다.( 객체들끼리 공유 할수 있는 값 )
+- 객체 생성자 함수 아래 `.prototype.[원하는키] =` 코드 입력하여 설정
+
+  ```javascript
+  Animal.prototype.say = function() {
+    console.log(this.sound);
+  };
+
+  Animal.prototype.sharedValue = 1;
+
+  const dog = new Animal('개', '보리', '월월'); // 새로운 객체 만들기
+  const cat = new Animal('고양이', '굴비', '야옹'); // 객체 생성자를 사용하는 방법
+
+  dog.say(); // 월월
+  cat.say(); // 야옹
+  console.log(dog.sharedValue); // 1
+  console.log(cat.sharedValue); // 1
+  ```
+
+### 객체 생성자 상속받기
