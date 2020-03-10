@@ -1113,4 +1113,50 @@ function Animal(type, name, sound) {
   const cat = new Cat('야옹이', '야옹');
   ```
 
-### 클래스
+  ### 클래스
+
+  - ES6에서 부터 `class`문법이 추가 되었음
+  - 객체 생성자로 구현했던 코드를 조금더 명확하고 깔끔하게 구현하도록 해준다
+
+    ```javascript
+    class Animal {
+      constructor(type, name, sound) {
+        this.type = type;
+        this.name = name;
+        this.sound = sound;
+      }
+      say() {
+        // 함수 따로 선언하면  자동으로 prototype으로 등록이 된다.
+        console.log(this.sound);
+      }
+    }
+    console.log(Animal.prototype.say); // this.sound (메서드)
+
+    const dog = new Animal('개', '보리', '멍멍');
+    const cat = new Animal('고양이', '나비', '야옹');
+
+    dog.say(); // 멍멍
+    cat.say(); // 야옹
+    ```
+
+  - `class`사용시 다른 클래스 상속
+  - `extends` 특정 클래스를 상속받는다는 의미
+  - `constructor`에서 사용하는 `super()` 함수가 상속받은 클래스의 생성자를 가르킨다
+
+  ```javascript
+  class Dog extends Animal {
+    constructor(name, sound) {
+      super('개', name, sound);
+    }
+  }
+  class Cat extends Animal {
+    constructor(name, sound) {
+      super('고양이', name, sound);
+    }
+  }
+  const dog = new Dog('보리', '멍멍');
+  const cat = new Cat('나비', '야옹');
+
+  dog.say();
+  cat.say();
+  ```
